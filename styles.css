@@ -1,0 +1,482 @@
+/* Ballstad International Stockfish & Mountain Camp */
+
+:root {
+  --bg: #f4f2ed;
+  --ink: #1d2a33;
+  --line: rgba(29, 42, 51, 0.18);
+  --serif: 'Instrument Serif', Georgia, serif;
+  --sans: Jost, 'Helvetica Neue', Helvetica, sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-weight: 300;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: var(--ink); text-decoration: none; }
+a:hover { color: #4a7a90; }
+::selection { background: #d7e3e8; }
+img { display: block; max-width: 100%; }
+
+.eyebrow {
+  font-size: 11px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  opacity: 0.5;
+}
+
+/* ---------- Landing: hero ---------- */
+
+.hero {
+  position: relative;
+  height: 78vh;
+  min-height: 520px;
+  overflow: hidden;
+}
+
+.hero__image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg,
+    rgba(10, 22, 30, 0.42) 0%,
+    rgba(10, 22, 30, 0.10) 40%,
+    rgba(10, 22, 30, 0.55) 100%);
+}
+
+.hero__inner {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: clamp(24px, 5vw, 64px);
+  color: #fbfaf7;
+}
+
+.hero__meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 24px;
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+.lockup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(18px, 3.5vh, 38px);
+  padding-bottom: clamp(8px, 3vh, 40px);
+}
+
+.lockup__emblem {
+  width: min(300px, 46vw);
+  height: auto;
+  filter: drop-shadow(0 2px 18px rgba(8, 18, 26, 0.45));
+}
+
+.lockup__text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(12px, 1.8vh, 20px);
+  text-align: center;
+  text-shadow: 0 2px 14px rgba(8, 18, 26, 0.45);
+}
+
+.lockup__title {
+  margin: 0;
+  font-weight: 500;
+  font-size: clamp(20px, 3.4vw, 46px);
+  line-height: 1.12;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-wrap: balance;
+}
+
+.lockup__tagline {
+  margin: 0;
+  font-weight: 300;
+  font-size: clamp(12px, 1.5vw, 18px);
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  opacity: 0.9;
+}
+
+/* ---------- Landing: content ---------- */
+
+.landing {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: clamp(48px, 8vw, 104px) clamp(24px, 5vw, 64px);
+}
+
+.landing__intro {
+  margin: 0 0 clamp(40px, 6vw, 72px);
+  max-width: 620px;
+  font-size: clamp(17px, 1.6vw, 21px);
+  line-height: 1.65;
+  text-wrap: pretty;
+}
+
+.sections {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid var(--line);
+}
+
+.section-link {
+  display: grid;
+  grid-template-columns: 64px 1fr auto;
+  align-items: baseline;
+  gap: clamp(12px, 3vw, 40px);
+  padding: clamp(20px, 3vw, 30px) 4px;
+  border-bottom: 1px solid var(--line);
+  transition: background 200ms, padding-left 200ms;
+}
+
+.section-link:hover,
+.section-link:focus-visible {
+  background: rgba(29, 42, 51, 0.04);
+  padding-left: 14px;
+}
+
+.section-link__number {
+  font-family: var(--serif);
+  font-size: 15px;
+  opacity: 0.45;
+}
+
+.section-link__title {
+  font-family: var(--serif);
+  font-size: clamp(26px, 3.4vw, 42px);
+  line-height: 1.1;
+}
+
+.section-link__more {
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  opacity: 0.45;
+}
+
+.booking-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 24px;
+  margin-top: clamp(40px, 6vw, 72px);
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  background: var(--ink);
+  color: #f7f5f1;
+  padding: 18px 34px;
+  border-radius: 999px;
+  font-size: 12px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  transition: background 200ms;
+}
+
+.button:hover,
+.button:focus-visible {
+  background: #2f4a5a;
+  color: #f7f5f1;
+}
+
+.button__arrow { font-size: 15px; }
+
+.booking-row__note {
+  font-size: 13px;
+  opacity: 0.55;
+}
+
+.site-footer {
+  border-top: 1px solid var(--line);
+  padding: 28px clamp(24px, 5vw, 64px);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: space-between;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  opacity: 0.5;
+}
+
+/* ---------- Subpages ---------- */
+
+.page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: clamp(20px, 4vw, 40px) clamp(24px, 5vw, 56px) clamp(64px, 9vw, 120px);
+  min-height: 100vh;
+}
+
+.back {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  padding: 12px 20px 12px 16px;
+  margin-left: -16px;
+  border-radius: 999px;
+  opacity: 0.7;
+  transition: background 200ms, opacity 200ms;
+}
+
+.back:hover,
+.back:focus-visible {
+  background: rgba(29, 42, 51, 0.06);
+  opacity: 1;
+}
+
+.back__arrow { font-size: 15px; }
+
+.page__body { padding-top: clamp(32px, 6vw, 64px); }
+
+.page__eyebrow { margin: 0 0 14px; }
+
+.page__title {
+  margin: 0 0 clamp(28px, 4vw, 44px);
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(34px, 5.5vw, 64px);
+  line-height: 1.05;
+  letter-spacing: -0.015em;
+}
+
+.page__text {
+  margin: 0 0 22px;
+  font-size: clamp(17px, 1.6vw, 20px);
+  line-height: 1.7;
+  max-width: 62ch;
+  text-wrap: pretty;
+}
+
+.page__lead {
+  margin: 0 0 clamp(32px, 5vw, 48px);
+  font-size: clamp(17px, 1.6vw, 20px);
+  line-height: 1.7;
+  max-width: 62ch;
+  text-wrap: pretty;
+}
+
+.page__foot {
+  margin-top: clamp(48px, 8vw, 88px);
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+}
+
+.back--foot {
+  padding: 0;
+  margin-left: 0;
+  border-radius: 0;
+}
+
+.back--foot:hover,
+.back--foot:focus-visible { background: none; opacity: 1; }
+
+/* Image placeholders — replace with real photos */
+.placeholder {
+  border: 1px solid var(--line);
+  background: repeating-linear-gradient(135deg,
+    rgba(29, 42, 51, 0.05) 0 10px,
+    transparent 10px 20px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.placeholder--portrait {
+  margin-top: clamp(36px, 5vw, 56px);
+  aspect-ratio: 16 / 9;
+}
+
+.placeholder--rorbu {
+  margin-top: 28px;
+  aspect-ratio: 3 / 2;
+}
+
+.placeholder__label {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  opacity: 0.6;
+}
+
+/* Overnatting: facts.
+   Hairlines sit on the cells, not in the grid gap, so a wrapped row
+   leaves the empty track blank instead of painting it solid. */
+.facts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  border-top: 1px solid var(--line);
+  border-left: 1px solid var(--line);
+}
+
+.fact {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.fact__label {
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  opacity: 0.5;
+}
+
+.fact__value {
+  font-family: var(--serif);
+  font-size: 30px;
+}
+
+/* Mountain Adventures: peaks */
+.rows {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid var(--line);
+}
+
+.peak {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 20px;
+  align-items: baseline;
+  padding: 22px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.peak__name {
+  font-family: var(--serif);
+  font-size: clamp(22px, 2.6vw, 30px);
+}
+
+.peak__meta {
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  opacity: 0.55;
+}
+
+/* Program: days */
+.day {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: clamp(16px, 3vw, 36px);
+  padding: clamp(22px, 3vw, 30px) 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.day__date {
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  opacity: 0.5;
+}
+
+.day__body {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.day__title {
+  font-family: var(--serif);
+  font-size: clamp(22px, 2.6vw, 30px);
+}
+
+.day__text {
+  font-size: 16px;
+  line-height: 1.65;
+  opacity: 0.75;
+}
+
+/* Pakkeliste: columns */
+/* 220px rather than 240px: the gap grows with the viewport while the column
+   is capped at 900px, and at 240px the third column drops to a new row on
+   wide screens. */
+.packing {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: clamp(28px, 5vw, 56px);
+}
+
+.packing__column {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.packing__heading {
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  opacity: 0.5;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--line);
+}
+
+.packing__item {
+  font-size: 17px;
+  line-height: 1.5;
+}
+
+/* Booking */
+.booking-page {
+  padding-top: clamp(64px, 12vw, 140px);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 22px;
+}
+
+.booking-page__eyebrow { margin: 0; }
+
+.booking-page__title {
+  margin: 0;
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(36px, 6vw, 72px);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+}
+
+.booking-page__text {
+  margin: 0;
+  font-size: clamp(17px, 1.6vw, 20px);
+  line-height: 1.7;
+  max-width: 52ch;
+  text-wrap: pretty;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; }
+}
