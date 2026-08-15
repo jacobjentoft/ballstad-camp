@@ -372,6 +372,10 @@ img { display: block; max-width: 100%; }
   font-size: 30px;
 }
 
+.facts + .page__text {
+  margin-top: clamp(20px, 3vw, 28px);
+}
+
 /* Mountain Adventures: peaks */
 .rows {
   display: flex;
@@ -398,6 +402,24 @@ img { display: block; max-width: 100%; }
   letter-spacing: 0.16em;
   text-transform: uppercase;
   opacity: 0.55;
+}
+
+/* Fit for Love: photo gallery.
+   Multi-column rather than grid — the photos mix portrait and landscape,
+   and columns let each keep its own height without cropping. The source
+   files are 480px wide, so the columns are kept near that to stay sharp. */
+.gallery {
+  columns: 3 240px;
+  column-gap: clamp(10px, 1.4vw, 16px);
+  margin-top: clamp(8px, 2vw, 16px);
+}
+
+.gallery img {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin-bottom: clamp(10px, 1.4vw, 16px);
+  break-inside: avoid;
 }
 
 /* Program: days */

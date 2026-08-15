@@ -10,7 +10,7 @@ Kan legges rett på GitHub Pages, Netlify, eller hvilken som helst webserver.
 | `/` | `index.html` |
 | `/om/` | `om/index.html` |
 | `/overnatting/` | `overnatting/index.html` |
-| `/mountain-adventures/` | `mountain-adventures/index.html` |
+| `/fit-for-love/` | `fit-for-love/index.html` |
 | `/program/` | `program/index.html` |
 | `/pakkeliste/` | `pakkeliste/index.html` |
 | `/booking/` | `booking/index.html` |
@@ -19,20 +19,22 @@ Ekte ruter, én mappe per side. Nettleserens tilbakeknapp virker som forventet.
 Alle lenker er relative, så siden virker like godt i en undermappe (`bruker.github.io/repo/`)
 som på et eget domene.
 
-## Tekst som skal erstattes
+## Det som står igjen
 
-Alt som står i `[hakeparentes]` er plassholder fra designet og skal byttes ut:
+All plassholdertekst er erstattet. To ting mangler fortsatt:
 
-- **om/** — to avsnitt om vertskapet
-- **overnatting/** — ingress, og tallene for rom, senger og fasiliteter
-- **mountain-adventures/** — ingress, og navn/tid/grad på toppene
-- **program/** — titler og beskrivelser for hver av de fire dagene
-- **pakkeliste/** — punktene i de tre kolonnene
+- **Bilder.** De to stripete boksene (`<div class="placeholder ...">`) byttes ut med
+  `<img>` når bildene finnes: portrett av vertskapet (16:9) på **om/**, og bilde av
+  rorbua (3:2) på **overnatting/**.
+- **Mottaker for påmeldingen.** `VERTSKAP_EPOST` nederst i `booking/index.html` er tom.
+  Uten adresse sier skjemaet fra at ingenting ble sendt; med adresse åpner det
+  e-postprogrammet ferdig utfylt. Det er også satt av plass til et ekte skjema der.
 
-Bildeplassholderne (`<div class="placeholder ...">`) byttes ut med `<img>` når bildene finnes:
-portrett av vertskapet (16:9) på **om/**, og bilde av rorbua (3:2) på **overnatting/**.
+Bildene på **fit-for-love/** ligger i `assets/galleri/`. De er 480 px brede, så
+galleriet holder kolonnene rundt den bredden for å holde dem skarpe.
 
-Bookingsiden har en kommentar der et skjema kan settes inn når bookingen åpner.
+Siden het tidligere Mountain Adventures. `mountain-adventures/index.html` er en stubb
+som sender videre til `fit-for-love/`, slik at lenker som alt er delt fortsatt virker.
 
 ## Lokal visning
 
