@@ -419,36 +419,41 @@ img { display: block; max-width: 100%; }
   opacity: 0.75;
 }
 
-/* Pakkeliste: columns */
-/* 220px rather than 240px: the gap grows with the viewport while the column
-   is capped at 900px, and at 240px the third column drops to a new row on
-   wide screens. */
-.packing {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: clamp(28px, 5vw, 56px);
+.day__note {
+  font-size: 13px;
+  line-height: 1.5;
+  opacity: 0.5;
 }
 
-.packing__column {
+.day__list {
+  margin: 4px 0 0;
+  padding: 0;
+  list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 7px;
 }
 
-.packing__heading {
-  font-size: 11px;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  opacity: 0.5;
-  padding-bottom: 10px;
-  border-bottom: 1px solid var(--line);
-}
-
-.packing__item {
-  font-size: 17px;
+.day__list li {
+  font-size: 16px;
   line-height: 1.5;
+  opacity: 0.75;
+  padding-left: 18px;
+  position: relative;
 }
 
+.day__list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 12px;
+  width: 8px;
+  height: 1px;
+  background: var(--ink);
+  opacity: 0.5;
+}
+
+/* Pakkeliste: columns */
 /* Booking */
 .booking-page {
   padding-top: clamp(64px, 12vw, 140px);
@@ -487,10 +492,11 @@ img { display: block; max-width: 100%; }
   letter-spacing: -0.01em;
 }
 
-/* Booking: what the room includes */
-.amenities {
+/* Hairline checklist. Single column by default, since long items read
+   better full width; --cols splits short ones across the page. */
+.checklist {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: 1fr;
   gap: 0 clamp(28px, 5vw, 56px);
   margin: 0;
   padding: 0;
@@ -498,15 +504,19 @@ img { display: block; max-width: 100%; }
   border-top: 1px solid var(--line);
 }
 
-.amenities li {
+.checklist--cols {
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.checklist li {
   padding: 14px 0 14px 22px;
   border-bottom: 1px solid var(--line);
   font-size: 17px;
-  line-height: 1.45;
+  line-height: 1.5;
   position: relative;
 }
 
-.amenities li::before {
+.checklist li::before {
   content: "";
   position: absolute;
   left: 2px;
