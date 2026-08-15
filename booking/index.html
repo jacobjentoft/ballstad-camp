@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
 <title>Booking — Ballstad International Stockfish and Mountain Camp</title>
-<meta name="description" content="Meld deg på Ballstad International Stockfish and Mountain Camp, 27.–30. august.">
+<meta name="description" content="Book plass på Ballstad International Stockfish and Mountain Camp, 27.–30. august.">
 <link rel="icon" href="../assets/logo-full.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,13 +14,43 @@
 </head>
 <body>
 
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="star" viewBox="0 0 24 24">
+    <path d="M12 1.8l3.09 6.26 6.91 1-5 4.87 1.18 6.88L12 17.56l-6.18 3.25L7 13.93l-5-4.87 6.91-1z"/>
+  </symbol>
+</svg>
+
 <div class="page">
   <a class="back" href="../"><span class="back__arrow">←</span>Tilbake</a>
 
   <main class="page__body">
     <p class="eyebrow page__eyebrow">Booking</p>
-    <h1 class="page__title">Hei på deg!</h1>
-    <p class="page__lead">Så gøy at du vil være med.</p>
+    <h1 class="page__title">Så gøy du vil være med på S&amp;M camp!</h1>
+    <p class="page__lead">Vi gleder oss til å se deg!</p>
+
+    <div class="availability">
+      <div class="availability__text">
+        <p class="availability__spots">
+          <span class="availability__dot" aria-hidden="true"></span>
+          Kun 2 ledige plasser
+        </p>
+        <p class="availability__watching">73 andre er inne og vurderer denne opplevelsen nå.</p>
+      </div>
+      <a class="button" href="#meld-deg-pa">Book plass nå<span class="button__arrow">→</span></a>
+    </div>
+
+    <div class="rating">
+      <span class="rating__score">5,0</span>
+      <span class="stars" role="img" aria-label="5 av 5 stjerner">
+        <svg class="star" aria-hidden="true"><use href="#star"/></svg>
+        <svg class="star" aria-hidden="true"><use href="#star"/></svg>
+        <svg class="star" aria-hidden="true"><use href="#star"/></svg>
+        <svg class="star" aria-hidden="true"><use href="#star"/></svg>
+        <svg class="star" aria-hidden="true"><use href="#star"/></svg>
+      </span>
+      <span class="rating__of">av 5</span>
+      <span class="rating__count">Basert på 3 anmeldelser</span>
+    </div>
 
     <h2 class="section-head">Inkludert i oppholdet</h2>
     <ul class="amenities">
@@ -38,10 +68,55 @@
       <li>Meget hyggelig vertskap</li>
     </ul>
 
-    <h2 class="section-head">Dette vil du ikke gå glipp av</h2>
-    <p class="page__text">[Plassholder] To–tre setninger om høydepunktene: hva som gjør akkurat disse fire dagene verdt turen nordover.</p>
+    <h2 class="section-head">Tidligere gjester</h2>
+    <div class="reviews">
+      <article class="review">
+        <span class="stars" role="img" aria-label="5 av 5 stjerner">
+          <svg class="star" aria-hidden="true"><use href="#star"/></svg>
+          <svg class="star" aria-hidden="true"><use href="#star"/></svg>
+          <svg class="star" aria-hidden="true"><use href="#star"/></svg>
+          <svg class="star" aria-hidden="true"><use href="#star"/></svg>
+          <svg class="star" aria-hidden="true"><use href="#star"/></svg>
+        </span>
+        <blockquote class="review__quote">«Kom for fjellene, ble for tørrfisken. Rakk aldri den siste toppen, men det skal visst være valgfritt.»</blockquote>
+        <div class="review__author">
+          <span class="review__name">Terje</span>
+          <span class="review__meta">Gjest i fjor · 3 døgn</span>
+        </div>
+      </article>
 
-    <h2 class="section-head">Meld deg på</h2>
+      <article class="review">
+        <span class="stars" role="img" aria-label="5 av 5 stjerner">
+          <svg class="star" aria-hidden="true"><use href="#star"/></svg>
+          <svg class="star" aria-hidden="true"><use href="#star"/></svg>
+          <svg class="star" aria-hidden="true"><use href="#star"/></svg>
+          <svg class="star" aria-hidden="true"><use href="#star"/></svg>
+          <svg class="star" aria-hidden="true"><use href="#star"/></svg>
+        </span>
+        <blockquote class="review__quote">«Sov som en stein, gikk lengre enn planlagt, og angrer ikke på noe av det. Været var bestilt i god tid, akkurat som lovet.»</blockquote>
+        <div class="review__author">
+          <span class="review__name">Erik</span>
+          <span class="review__meta">Gjest i fjor · 4 døgn</span>
+        </div>
+      </article>
+
+      <article class="review">
+        <span class="stars" role="img" aria-label="5 av 5 stjerner">
+          <svg class="star" aria-hidden="true"><use href="#star"/></svg>
+          <svg class="star" aria-hidden="true"><use href="#star"/></svg>
+          <svg class="star" aria-hidden="true"><use href="#star"/></svg>
+          <svg class="star" aria-hidden="true"><use href="#star"/></svg>
+          <svg class="star" aria-hidden="true"><use href="#star"/></svg>
+        </span>
+        <blockquote class="review__quote">«Var egentlig bare innom for å hente Tonje. Ble i tre døgn. Anbefales.»</blockquote>
+        <div class="review__author">
+          <span class="review__name">Tonjes søster</span>
+          <span class="review__meta">Ikke invitert · kom likevel</span>
+        </div>
+      </article>
+    </div>
+
+    <h2 class="section-head" id="meld-deg-pa">Meld deg på</h2>
     <form class="form" id="booking-form" novalidate>
       <div class="field">
         <label for="navn">Navn</label>
