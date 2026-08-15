@@ -67,47 +67,56 @@ img { display: block; max-width: 100%; }
   color: #fbfaf7;
 }
 
-.hero__meta {
+/* Hero corners: lockup top-left, place and date top-right,
+   tagline bottom-right. */
+.hero__top {
   display: flex;
   justify-content: space-between;
-  align-items: baseline;
-  gap: 24px;
+  align-items: flex-start;
+  gap: clamp(16px, 4vw, 48px);
+}
+
+.hero__meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6px;
+  text-align: right;
   font-size: 11px;
   letter-spacing: 0.22em;
   text-transform: uppercase;
+  white-space: nowrap;
+  /* Trailing letter-space would otherwise hold the text off the edge. */
+  margin-right: -0.22em;
+}
+
+.hero__bottom {
+  display: flex;
+  justify-content: flex-end;
 }
 
 .lockup {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: clamp(18px, 3.5vh, 38px);
-  padding-bottom: clamp(8px, 3vh, 40px);
+  align-items: flex-start;
+  gap: clamp(10px, 1.8vh, 20px);
+  text-shadow: 0 2px 14px rgba(8, 18, 26, 0.45);
+  min-width: 0;
 }
 
 .lockup__emblem {
-  width: min(300px, 46vw);
+  width: min(200px, 38vw);
   height: auto;
   filter: drop-shadow(0 2px 18px rgba(8, 18, 26, 0.45));
-}
-
-.lockup__text {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: clamp(12px, 1.8vh, 20px);
-  text-align: center;
-  text-shadow: 0 2px 14px rgba(8, 18, 26, 0.45);
 }
 
 .lockup__title {
   margin: 0;
   font-weight: 500;
-  font-size: clamp(20px, 3.4vw, 46px);
-  line-height: 1.12;
+  font-size: clamp(13px, 1.9vw, 26px);
+  line-height: 1.15;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  text-wrap: balance;
 }
 
 .lockup__tagline {
@@ -117,6 +126,8 @@ img { display: block; max-width: 100%; }
   letter-spacing: 0.4em;
   text-transform: uppercase;
   opacity: 0.9;
+  text-shadow: 0 2px 14px rgba(8, 18, 26, 0.45);
+  margin-right: -0.4em;
 }
 
 /* ---------- Landing: content ---------- */
