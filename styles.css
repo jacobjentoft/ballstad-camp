@@ -664,15 +664,35 @@ img { display: block; max-width: 100%; }
   opacity: 0.5;
 }
 
+/* Stars. Two stacked rows — a faint one underneath, a solid one on top
+   clipped to --pct — so half and nine-tenths of a star render honestly
+   instead of rounding up to a full one. */
 .stars {
-  display: inline-flex;
-  gap: 3px;
+  position: relative;
+  display: inline-block;
   align-self: center;
+  line-height: 0;
+}
+
+.stars__row {
+  display: flex;
+  gap: 3px;
+  width: max-content;
+}
+
+.stars__base { opacity: 0.2; }
+
+.stars__fill {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  width: var(--pct, 100%);
 }
 
 .stars .star {
   width: 16px;
   height: 16px;
+  flex: none;
   fill: currentColor;
   opacity: 0.85;
 }
