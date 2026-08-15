@@ -313,32 +313,32 @@ img { display: block; max-width: 100%; }
 .back--foot:hover,
 .back--foot:focus-visible { background: none; opacity: 1; }
 
-/* Image placeholders — replace with real photos */
-.placeholder {
-  border: 1px solid var(--line);
-  background: repeating-linear-gradient(135deg,
-    rgba(29, 42, 51, 0.05) 0 10px,
-    transparent 10px 20px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.placeholder--portrait {
+/* Om oss: the two hosts */
+.portraits {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: clamp(12px, 2vw, 20px);
   margin-top: clamp(36px, 5vw, 56px);
-  aspect-ratio: 16 / 9;
 }
 
-.placeholder--rorbu {
-  margin-top: 28px;
-  aspect-ratio: 3 / 2;
+.portraits figure {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
-.placeholder__label {
-  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-  font-size: 12px;
-  letter-spacing: 0.08em;
-  opacity: 0.6;
+.portraits img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.portraits figcaption {
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  opacity: 0.5;
 }
 
 /* Overnatting: facts.

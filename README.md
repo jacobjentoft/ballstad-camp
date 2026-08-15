@@ -21,11 +21,8 @@ som på et eget domene.
 
 ## Det som står igjen
 
-All plassholdertekst er erstattet. To ting mangler fortsatt:
+Alle plassholdere er borte — både tekst og bilder. Én ting mangler fortsatt:
 
-- **Bilder.** De to stripete boksene (`<div class="placeholder ...">`) byttes ut med
-  `<img>` når bildene finnes: portrett av vertskapet (16:9) på **om/**, og bilde av
-  rorbua (3:2) på **overnatting/**.
 - **Mottaker for påmeldingen.** `VERTSKAP_EPOST` nederst i `booking/index.html` er tom.
   Uten adresse sier skjemaet fra at ingenting ble sendt; med adresse åpner det
   e-postprogrammet ferdig utfylt. Det er også satt av plass til et ekte skjema der.
