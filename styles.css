@@ -157,7 +157,7 @@ img { display: block; max-width: 100%; }
 
 .section-link {
   display: grid;
-  grid-template-columns: 64px 1fr auto;
+  grid-template-columns: 1fr auto;
   align-items: baseline;
   gap: clamp(12px, 3vw, 40px);
   padding: clamp(20px, 3vw, 30px) 4px;
@@ -169,12 +169,6 @@ img { display: block; max-width: 100%; }
 .section-link:focus-visible {
   background: rgba(29, 42, 51, 0.04);
   padding-left: 14px;
-}
-
-.section-link__number {
-  font-family: var(--serif);
-  font-size: 15px;
-  opacity: 0.45;
 }
 
 .section-link__title {
