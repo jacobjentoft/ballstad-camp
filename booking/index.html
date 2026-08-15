@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
 <title>Booking — Ballstad International Stockfish and Mountain Camp</title>
-<meta name="description" content="Bookingen er ikke åpnet ennå.">
+<meta name="description" content="Meld deg på Ballstad International Stockfish and Mountain Camp, 27.–30. august.">
 <link rel="icon" href="../assets/logo-full.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,17 +17,109 @@
 <div class="page">
   <a class="back" href="../"><span class="back__arrow">←</span>Tilbake</a>
 
-  <main class="booking-page">
-    <p class="eyebrow booking-page__eyebrow">Booking</p>
-    <h1 class="booking-page__title">Kommer snart</h1>
-    <p class="booking-page__text">Bookingen er ikke åpnet ennå. Inntil videre gjelder den gamle metoden: si fra til vertskapet, så noterer de det på kjøleskapet.</p>
-    <!-- Plass til bookingskjema her når det åpnes. -->
+  <main class="page__body">
+    <p class="eyebrow page__eyebrow">Booking</p>
+    <h1 class="page__title">Hei på deg!</h1>
+    <p class="page__lead">Så gøy at du vil være med.</p>
+
+    <h2 class="section-head">Inkludert i oppholdet</h2>
+    <ul class="amenities">
+      <li>Felles bad og toalett i gangen</li>
+      <li>Felles kjøkken med kaffemaskin</li>
+      <li>Terrasse</li>
+      <li>Sengetøy og håndkle inkludert</li>
+      <li>Vannkoker</li>
+      <li>Sjøutsikt</li>
+      <li>Flatskjerm-TV</li>
+      <li>Gratis WiFi</li>
+      <li>Størrelse 8–10 m²</li>
+      <li>Soveplass for to voksne</li>
+      <li>Røykfrie rom</li>
+      <li>Meget hyggelig vertskap</li>
+    </ul>
+
+    <h2 class="section-head">Dette vil du ikke gå glipp av</h2>
+    <p class="page__text">[Plassholder] To–tre setninger om høydepunktene: hva som gjør akkurat disse fire dagene verdt turen nordover.</p>
+
+    <h2 class="section-head">Meld deg på</h2>
+    <form class="form" id="booking-form" novalidate>
+      <div class="field">
+        <label for="navn">Navn</label>
+        <input type="text" id="navn" name="navn" autocomplete="name" required>
+      </div>
+      <div class="field">
+        <label for="personer">Antall personer</label>
+        <input type="number" id="personer" name="personer" min="1" max="20" step="1" inputmode="numeric" required>
+      </div>
+      <div class="field">
+        <label for="dogn">Antall døgn</label>
+        <input type="number" id="dogn" name="dogn" min="1" max="14" step="1" inputmode="numeric" required>
+      </div>
+
+      <p class="form__status" id="booking-status" role="status" hidden></p>
+
+      <div class="form__actions">
+        <button class="button" type="submit">Send påmelding<span class="button__arrow">→</span></button>
+        <span class="form__note">Plassene fordeles etter innfløkte, udokumenterte kriterier.</span>
+      </div>
+    </form>
   </main>
 
   <div class="page__foot">
     <a class="back back--foot" href="../"><span class="back__arrow">←</span>Tilbake til forsiden</a>
   </div>
 </div>
+
+<script>
+  // Static site, so there is no server to post to. With an address set below
+  // the form opens the guest's mail client with everything filled in; without
+  // one it says plainly that nothing was sent, rather than faking a booking.
+  var VERTSKAP_EPOST = "";
+
+  (function () {
+    var form = document.getElementById("booking-form");
+    var status = document.getElementById("booking-status");
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      var navn = form.navn.value.trim();
+      var personer = form.personer.value.trim();
+      var dogn = form.dogn.value.trim();
+
+      if (!navn || !personer || !dogn) {
+        show("Fyll inn navn, antall personer og antall døgn, så tar vi det derfra.");
+        return;
+      }
+
+      if (!VERTSKAP_EPOST) {
+        show(
+          "Skjemaet er ikke koblet til noen mottaker ennå, så dette ble ikke sendt. " +
+          "Inntil videre gjelder den gamle metoden: si fra til vertskapet, så noterer de det på kjøleskapet."
+        );
+        return;
+      }
+
+      var emne = "Påmelding — Ballstad Camp 27.–30. august";
+      var tekst =
+        "Navn: " + navn + "\n" +
+        "Antall personer: " + personer + "\n" +
+        "Antall døgn: " + dogn + "\n";
+
+      window.location.href =
+        "mailto:" + VERTSKAP_EPOST +
+        "?subject=" + encodeURIComponent(emne) +
+        "&body=" + encodeURIComponent(tekst);
+
+      show("Vi åpnet e-postprogrammet ditt med påmeldingen ferdig utfylt. Send den, så er du på lista.");
+    });
+
+    function show(msg) {
+      status.textContent = msg;
+      status.hidden = false;
+    }
+  })();
+</script>
 
 </body>
 </html>
