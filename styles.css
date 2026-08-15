@@ -95,28 +95,38 @@ img { display: block; max-width: 100%; }
   justify-content: flex-end;
 }
 
+/* Sized to sit alongside the 11px corner text, not to compete with it —
+   the lockup is a mark in the corner, not a centrepiece. */
 .lockup {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: clamp(10px, 1.8vh, 20px);
+  gap: clamp(8px, 1.1vh, 12px);
   text-shadow: 0 2px 14px rgba(8, 18, 26, 0.45);
   min-width: 0;
 }
 
 .lockup__emblem {
-  width: min(200px, 38vw);
+  width: min(112px, 24vw);
   height: auto;
-  filter: drop-shadow(0 2px 18px rgba(8, 18, 26, 0.45));
+  filter: drop-shadow(0 2px 14px rgba(8, 18, 26, 0.45));
 }
 
 .lockup__title {
   margin: 0;
   font-weight: 500;
-  font-size: clamp(13px, 1.9vw, 26px);
-  line-height: 1.15;
-  letter-spacing: 0.06em;
+  font-size: clamp(11px, 0.95vw, 15px);
+  line-height: 1.25;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
+  text-wrap: balance;
+}
+
+/* The hard break keeps the two-line lockup on wide screens, but on a phone
+   it strands "CAMP" alone on a third line. Drop it there and let the
+   balanced wrap split the title evenly instead. */
+@media (max-width: 620px) {
+  .lockup__title br { display: none; }
 }
 
 .lockup__tagline {
