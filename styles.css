@@ -67,7 +67,7 @@ img { display: block; max-width: 100%; }
   color: #fbfaf7;
 }
 
-/* Hero corners: lockup top-left, place and date top-right,
+/* Hero corners: lockup top-left, place and date bottom-left,
    tagline bottom-right. */
 .hero__top {
   display: flex;
@@ -76,23 +76,20 @@ img { display: block; max-width: 100%; }
   gap: clamp(16px, 4vw, 48px);
 }
 
-.hero__meta {
+.hero__bottom {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: flex-end;
-  gap: 6px;
-  text-align: right;
+  gap: clamp(12px, 3vw, 40px);
+  flex-wrap: wrap;
+}
+
+.hero__meta {
+  margin: 0;
   font-size: 11px;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  white-space: nowrap;
-  /* Trailing letter-space would otherwise hold the text off the edge. */
-  margin-right: -0.22em;
-}
-
-.hero__bottom {
-  display: flex;
-  justify-content: flex-end;
+  text-shadow: 0 2px 14px rgba(8, 18, 26, 0.45);
 }
 
 /* Sized to sit alongside the 11px corner text, not to compete with it —
@@ -138,7 +135,10 @@ img { display: block; max-width: 100%; }
   text-transform: uppercase;
   opacity: 0.9;
   text-shadow: 0 2px 14px rgba(8, 18, 26, 0.45);
+  /* Trailing letter-space would hold the text off the edge; auto keeps it
+     right-aligned on narrow screens, where the bottom row wraps. */
   margin-right: -0.4em;
+  margin-left: auto;
 }
 
 /* ---------- Landing: content ---------- */
