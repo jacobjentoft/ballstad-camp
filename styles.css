@@ -85,7 +85,9 @@ img { display: block; max-width: 100%; }
 }
 
 .hero__meta {
-  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
   font-size: 11px;
   letter-spacing: 0.22em;
   text-transform: uppercase;
@@ -127,10 +129,12 @@ img { display: block; max-width: 100%; }
   .lockup__title br { display: none; }
 }
 
+/* Sits on the same row as the 11px place-and-date block, so it is kept
+   close to it — 18px next to 11px read as a mismatch, not a hierarchy. */
 .lockup__tagline {
   margin: 0;
   font-weight: 300;
-  font-size: clamp(12px, 1.5vw, 18px);
+  font-size: clamp(11px, 1.05vw, 13px);
   letter-spacing: 0.4em;
   text-transform: uppercase;
   opacity: 0.9;
