@@ -100,7 +100,8 @@ img { display: block; max-width: 100%; }
 .lockup {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
+  text-align: center;
   gap: clamp(8px, 1.1vh, 12px);
   text-shadow: 0 2px 14px rgba(8, 18, 26, 0.45);
   min-width: 0;
